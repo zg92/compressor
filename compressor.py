@@ -6,7 +6,7 @@ def filesList(file_path):
 
 def compressPhoto(file_to_save, file_name, destination_directory):
     picture = Image.open(file_to_save)
-    picture.save(os.path.join(destination_directory, file_name), "JPEG", optimize=True, quality=10)
+    picture.save(os.path.join(destination_directory, file_name), "JPEG", optimize=True, quality=80)
     return
 
 def compressProcess(file_path, destination_directory):
