@@ -1,19 +1,18 @@
 import os, sys 
 from PIL import Image
 
-def filesList(filePath):
-    return os.listdir(filePath)
+def filesList(file_path):
+    return os.listdir(file_path)
 
-def compressPhoto(file_to_edit, destination_directory):
-    filepath = os.path.join(os.getcwd(),file)
-    picture = Image.open(filepath)
-    picture.save(os.path.join(destination_directory, file), "JPEG", optimize=True, quality=10)
+def compressPhoto(file_to_save, file_name, destination_directory):
+    picture = Image.open(file_to_save)
+    picture.save(os.path.join(destination_directory, file_name), "JPEG", optimize=True, quality=10)
     return
 
-def compressProcess(file, destination_directory):
-    files = filesList(filePath)
+def compressProcess(file_path, destination_directory):
+    files = filesList(file_path)
     for file_to_edit in files:
-        compressPhoto(file_to_edit, destination_directory)
+        compressPhoto(file_to_save=os.path.join(sys.argv[1], file_to_edit), file_name=file_to_edit, destination_directory=destination_directory)
 
 if __name__ == '__main__': 
     if sys.argv[1] or sys.argv[2] != None:
