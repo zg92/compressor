@@ -15,7 +15,7 @@ def compressProcess(file_path, destination_directory):
         compressPhoto(file_to_save=os.path.join(sys.argv[1], file_to_edit), file_name=file_to_edit, destination_directory=destination_directory)
 
 if __name__ == '__main__': 
-    if len(sys.argv) < 2:
+    if len(sys.argv) == 3:
         compressProcess(sys.argv[1], sys.argv[2])
     else:
         print('Arguments supplied were invalid')
